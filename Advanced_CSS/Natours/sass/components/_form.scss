@@ -6,9 +6,9 @@
   &__input {
     display: block;
     width: 90%;
+    padding: 1rem 1.3rem;
     font-family: inherit;
     font-size: 1rem;
-    padding: 1rem 1.3rem;
     border-radius: 2px;
     color: inherit;
     background-color: rgb(white, 0.5);
@@ -33,10 +33,10 @@
 
   &__label {
     display: block;
-    font-size: 0.8rem;
-    font-weight: bold;
     margin-left: 1.3rem;
     margin-top: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: bold;
     transition: all 0.3s;
   }
 
@@ -56,31 +56,28 @@
   }
 
   &__radio-label {
+    position: relative;
+    padding-left: 2rem;
     font-size: $default-font-size;
     cursor: pointer;
-    padding-left: 2rem;
-    position: relative;
   }
 
   &__radio-button {
     display: inline-block;
+    position: absolute;
     height: 2rem;
     width: 2rem;
     border: 5px solid $color-primary;
     border-radius: 100%;
-    position: absolute;
     left: -1rem;
 
     &::after {
+      @include absCenter;
       content: "";
       display: block;
       height: 0.95rem;
       width: 0.95rem;
       border-radius: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background-color: $color-primary;
       opacity: 0;
       transition: opacity 0.2s;
