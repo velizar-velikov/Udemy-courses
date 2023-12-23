@@ -21,12 +21,26 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.4s 0.1s;
+
+    @include respond(phone) {
+      width: 90%;
+    }
   }
 
   &__left {
     width: 33.33%;
     display: table-cell;
     vertical-align: middle;
+
+    @include respond(tab-port) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      aspect-ratio: 3/1;
+      padding: 0.7% 0 0 0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
   }
 
   &__right {
@@ -34,11 +48,23 @@
     display: table-cell;
     vertical-align: middle;
     padding: 1.8rem 3.5rem;
+
+    @include respond(tab-port) {
+      display: block;
+      width: 100%;
+      padding: 1.4rem 2rem;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-port) {
+      display: inline-block;
+      width: 49%;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -48,6 +74,10 @@
     column-gap: 2.5rem;
     column-rule: 1px solid $color-grey-light-2;
     hyphens: auto;
+
+    @include respond(tab-land) {
+      column-count: 1;
+    }
   }
 
   &:target {
